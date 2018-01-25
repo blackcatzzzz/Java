@@ -88,6 +88,14 @@ public class JavaContainer {
             System.out.print(pq.poll() + " ");
         System.out.println();
     }
+
+    public static void testByte(){
+        byte[] buff = new byte[8192];
+        byte[] b = new byte[0];
+        System.arraycopy(b, 0, buff, 0, b.length);
+
+    }
+
     public static void main(String[] args){
         LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.add(1);
@@ -116,6 +124,7 @@ public class JavaContainer {
 
         testHashMap();
         testPriorityQueue();
+        testByte();
     }
 }
 
