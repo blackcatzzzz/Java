@@ -18,8 +18,21 @@ class Singleton{
     }
 }
 
+// Initialization on Demand Holder（IODH）
+class SingletonIODH{
+    private SingletonIODH(){}
+
+    private static class SingletonHolder{
+        private static SingletonIODH instance  = new SingletonIODH();
+    }
+
+    public static SingletonIODH getInstance(){
+        return SingletonHolder.instance;
+    }
+}
+
 public class SingletonDemo {
     public static void main(String[] args) {
-
+        SingletonIODH s = SingletonIODH.getInstance();
     }
 }
