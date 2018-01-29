@@ -4,6 +4,7 @@ package com.zhangchi.JavaLearning.Container;
 import java.util.*;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CountDownLatch;
 
 public class JavaContainer {
 
@@ -97,6 +98,21 @@ public class JavaContainer {
 
     }
 
+    public static void testLinkedHashMap(){
+        LinkedHashMap<Integer, String> map = new LinkedHashMap<>(16, 0.75f, true);
+        map.put(1, "a");
+        map.put(2, "b");
+        map.put(3, "c");
+        map.put(4, "d");
+        map.get(3);
+        map.put(5, "e");
+        Iterator<Map.Entry<Integer, String>> it = map.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry entry = it.next();
+            System.out.println(entry.getKey() + "," + entry.getValue());
+        }
+    }
+
     public static void main(String[] args){
         LinkedList<Integer> linkedList = new LinkedList<>();
         linkedList.add(1);
@@ -114,7 +130,7 @@ public class JavaContainer {
         System.out.println("index(1), " + linkedList.get(1));
 
         String s1 = "hello world";
-        System.out.print(s1.substring(0, 2));
+        System.out.println(s1.substring(0, 2));
         ArrayList<String> list = new ArrayList<String>(Arrays.asList("a","b","c","d"));
         // error demo
 //        for(String s:list){
@@ -122,9 +138,10 @@ public class JavaContainer {
 //                list.remove(s);
 //            }
 //        }
-        testHashMap();
-        testPriorityQueue();
-        testByte();
+        testLinkedHashMap();
+//        testHashMap();
+//        testPriorityQueue();
+//        testByte();
     }
 }
 
