@@ -3,6 +3,7 @@ package com.zhangchi.JavaLearning.Container;
 
 import java.util.*;
 import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 
@@ -111,6 +112,10 @@ public class JavaContainer {
             Map.Entry entry = it.next();
             System.out.println(entry.getKey() + "," + entry.getValue());
         }
+    }
+
+    public static void testConCurrentHashMap(){
+        ConcurrentHashMap<Integer,String> concurrentHashMap = new ConcurrentHashMap<>();
     }
 
     public static void main(String[] args){
